@@ -1,0 +1,21 @@
+# Python environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# DVC cache and local credentials/tokens
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+
+# Generated artifacts (versioned by DVC, not Git)
+data/raw/
+data/processed/
+models/
+*.h5
+
+# Local editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
