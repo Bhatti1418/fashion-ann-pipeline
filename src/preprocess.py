@@ -19,9 +19,9 @@ def main() -> None:
     raw_dir = ROOT / "data" / "raw"
     train_data = np.load(raw_dir / "train.npz")
     test_data = np.load(raw_dir / "test.npz")
-    x_train = train_data["images"].astype(np.float32) / 255.0
+    x_train = (train_data["images"].astype(np.float32) / 255.0 - 0.2860) / 0.3530
     y_train = train_data["labels"].astype(np.int64)
-    x_test = test_data["images"].astype(np.float32) / 255.0
+    x_test = (test_data["images"].astype(np.float32) / 255.0 - 0.2860) / 0.3530
     y_test = test_data["labels"].astype(np.int64)
 
     x_fit, x_val, y_fit, y_val = train_test_split(
