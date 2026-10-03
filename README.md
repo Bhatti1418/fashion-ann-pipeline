@@ -36,3 +36,5 @@ Initialize DVC on the `dev` branch after the first Git commit. Create a Google D
 - `dvc.yaml`: four-stage reproducible pipeline.
 
 Generated datasets and models are DVC artifacts; `metrics.json` and `dvc.lock` describe the evaluated/pipeline state.
+
+Fixed typo in setup section.
