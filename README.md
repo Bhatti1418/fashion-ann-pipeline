@@ -17,14 +17,14 @@ Create and activate a virtual environment, then install the project dependencies
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install "tensorflow>=2.15,<3" "dvc[gdrive]" pyyaml scikit-learn matplotlib
+python -m pip install -r requirements.txt
 ```
 
 Run each stage from the repository root with `python src/prepare.py`, `python src/preprocess.py`, `python src/train.py`, and `python src/evaluate.py`. Once DVC is configured, `dvc repro` runs the complete pipeline.
 
 ## DVC Google Drive setup
 
-Initialize DVC on the `dev` branch after the first Git commit. Create a Google Drive folder, create an OAuth Desktop client in Google Cloud Console, enable the Drive API, and add the Google account used for authorization as an OAuth test user. Configure a remote using the folder ID and set the client credentials with `dvc remote modify`; do not commit OAuth secrets or token files. See the supplied DVC integration guide for the Google Cloud steps and troubleshooting.
+Initialize DVC on the `dev` branch after the first Git commit. Create a Google Drive folder, create an OAuth Desktop client in Google Cloud Console, enable the Drive API, and add the Google account used for authorization as an OAuth test user. Configure a remote using the folder ID. Set the OAuth client ID and secret with `dvc remote modify --local` so they are written to the ignored `.dvc/config.local`, not the shared `.dvc/config`; never commit OAuth secrets or token files. See the supplied DVC integration guide for the Google Cloud steps and troubleshooting.
 
 ## Project files
 
