@@ -1,6 +1,6 @@
 # Fashion-MNIST ANN Pipeline
 
-An end-to-end, reproducible Fashion-MNIST classification project using a fully connected TensorFlow/Keras ANN, Git, and DVC. The workflow is split into four command-line stages: download the dataset, preprocess it, train the model, and evaluate it.
+An end-to-end, reproducible Fashion-MNIST classification project using a fully-connected TensorFlow/Keras ANN, Git, and DVC. The workflow is split into four command-line stages: download the dataset, preprocess it, train the model, and evaluate it.
 
 ## Requirements
 
