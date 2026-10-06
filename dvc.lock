@@ -61,3 +61,36 @@ stages:
       md5: 199aa04cf6ebd477c69b0ef4a2925486.dir
       size: 4911374
       nfiles: 2
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed/test.npz
+      hash: md5
+      md5: 3f0fcbbcfbfe2b03a88372255e987d05
+      size: 6445705
+    - path: models/model.h5
+      hash: md5
+      md5: 991749668c45da9baab42ba1080e6c98
+      size: 4910168
+    - path: src/evaluate.py
+      hash: md5
+      md5: 1070571332b8238f79f65936eee57828
+      size: 2573
+    params:
+      params.yaml:
+        train:
+          dense_units: 512
+          dropout_rate: 0.2
+          learning_rate: 0.001
+          epochs: 15
+          batch_size: 128
+          seed: 42
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 1bade289d9cfc9281229d95d0a91e7d3
+      size: 1673
+    - path: reports/confusion_matrix.png
+      hash: md5
+      md5: fb8e19064519ae9fb579311c220185c6
+      size: 64416
